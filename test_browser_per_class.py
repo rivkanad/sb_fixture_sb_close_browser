@@ -1,3 +1,7 @@
+import pytest
+
+
+@pytest.mark.usefixtures("login")
 class Test1:
     def test_1(self, sb):
         sb.wait(1)
@@ -8,6 +12,7 @@ class Test1:
         sb.assert_element("div.inventory_list")
 
 
+@pytest.mark.usefixtures("login")
 class Test2:
     def test_3(self, sb):
         sb.wait(1)
